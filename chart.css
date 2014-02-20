@@ -7,5 +7,19 @@ body {
 	background: rgb(0, 139, 255);
 	text-align: right;
 	padding: 2px 5px;
-	margin: 3px;
+	margin-bottom: 3px;
+}
+
+.svg-chart rect {
+	fill: rgb(0, 139, 255);
+}
+
+.svg-chart text {
+	fill: #FFF;
+	text-anchor: end;
+}
+
+.block {
+	padding: 10px 0; 
+	display: block;
 }
