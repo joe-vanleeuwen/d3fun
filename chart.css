@@ -1,0 +1,11 @@
+body {
+	font-family: 'Helvetica', sans-serif;
+}
+
+.bar {
+	color: rgb(255, 255, 255);
+	background: rgb(0, 139, 255);
+	text-align: right;
+	padding: 2px 5px;
+	margin: 3px;
+}
