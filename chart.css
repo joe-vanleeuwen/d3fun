@@ -10,13 +10,22 @@ body {
 	margin-bottom: 3px;
 }
 
-.svg-chart rect {
+.svg-chart, rect {
 	fill: rgb(0, 139, 255);
 }
 
-.svg-chart text {
+.svg-chart, text {
 	fill: #FFF;
 	text-anchor: end;
+}
+
+.svg-vertical-chart rect {
+	fill: rgb(0, 139, 255);
+}
+
+.svg-vertical-chart text {
+	fill: #FFF;
+	text-anchor: middle;
 }
 
 .block {

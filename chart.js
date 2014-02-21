@@ -5,6 +5,7 @@ $(document).ready(function() {
 	d3Check(function() {
 		makeChart(data);
 		makeSVGChart(data);
+		makeSVGVerticalChart(data);
 	})
 })
 
@@ -42,6 +43,7 @@ function makeChart(data) {
 	    .text(function(d) { return d });
 }
 
+// why svg? 'Whereas HTML is largely limited to rectangular shapes, SVG supports powerful drawing primitives like Bézier curves, gradients, clipping and masks' -- courtesy of http://bost.ocks.org/mike/bar/2/
 // makes an SVG chart
 function makeSVGChart(data) {
 	// setting width of chart and height of the bars
@@ -78,9 +80,49 @@ function makeSVGChart(data) {
 		// er the dy centers the text vertically?? ANSWER: they both do . . .
 		.attr('dy', '.35em')
 		.text(function(d) { return d; });
-
 }
 
+// makes vertical SVG chart
+function makeSVGVerticalChart(data) {
+	// setting width of chart and height of the bars
+	var width    = 168,
+		height   = 420;
+	var barWidth =  width / data.length;
+
+	// setting the scale
+	var y = d3.scale.linear()
+		.domain([0, d3.max(data)])
+		.range([height, 0]);
+
+	var chart = d3.select('.svg-vertical-chart')
+		.attr('width', width)
+		.attr('height', height);
+
+	// the g element will be the parent of the rect and text elements 
+	var bar = chart.selectAll('g')
+		.data(data)
+	  .enter().append('g')
+	    // positioning the bars vertically. i is index. svg does not use flow positioning like html
+	    // .attr('transform', function(d, i) { return 'translate(' + i * barWidth + ',' + (height - y(d)) + ')'; });
+	    .attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
+
+	bar.append('rect')
+		// since the range has the max height at the beginning, this y value will be largest for the first g el
+		.attr("y", y)
+		// subtracting from bar width to add horizontal spacing between bars
+		.attr('width', barWidth - 3)
+		// calculating height
+		.attr("height", function(d) { return height - y(d); })
+
+	bar.append('text')
+		// css style has text-anchor: right; so here x is setting text 5 pixels inside of the right side of the bar
+		.attr('x', barWidth / 2)
+		// y positions the text centered vertically?
+		.attr('y', function(d) { return y(d) + 5; })
+		// er the dy centers the text vertically?? ANSWER: they both do . . .
+		.attr('dy', '.75em')
+		.text(function(d) { return d; });
+}
 
 
 
