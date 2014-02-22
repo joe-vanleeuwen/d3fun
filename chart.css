@@ -10,23 +10,42 @@ body {
 	margin-bottom: 3px;
 }
 
-.svg-chart, rect {
+.chart rect {
 	fill: rgb(0, 139, 255);
+}
+
+.chart, text {
+	fill: #FFF;
 }
 
 .svg-chart, text {
-	fill: #FFF;
 	text-anchor: end;
 }
 
-.svg-vertical-chart rect {
-	fill: rgb(0, 139, 255);
-}
-
 .svg-vertical-chart text {
-	fill: #FFF;
 	text-anchor: middle;
 }
+
+.svg-vertical-rangeband-chart text {
+	text-anchor: middle;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+	fill: #000;
+	font-size: 12px;
+}
+
+.x.axis path {
+  display: none;
+}
+
 
 .block {
 	padding: 10px 0; 
