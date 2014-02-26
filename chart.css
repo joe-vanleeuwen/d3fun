@@ -51,3 +51,22 @@ body {
 	padding: 10px 0; 
 	display: block;
 }
+
+rect.bananas {
+	fill: yellow;
+}
+
+rect.oranges {
+	fill: orange;
+}
+
+rect.apples {
+	fill: red;
+}
+
+rect.carrots {
+	fill: purple;
+}
+
+
+

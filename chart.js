@@ -216,6 +216,7 @@ function makeSVGVerticalRangeBandChart(data) {
 	      .attr("height", function(d) { return height - y(d.value); })
 	      .attr("width", x.rangeBand());
 
+	// chart label ('Frequency')
 	chart.append("g")
 	    .attr("class", "y axis")
 	    .call(yAxis)
