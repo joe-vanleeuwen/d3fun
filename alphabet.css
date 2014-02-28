@@ -1,0 +1,16 @@
+.alphabet text {
+  font-size: 28px;
+  font-family: monospace;
+}
+
+.alphabet .update {
+  fill: #000;
+}
+
+.alphabet .enter {
+  fill: green;
+}
+
+.alphabet .exit {
+  fill: red;
+}

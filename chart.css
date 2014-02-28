@@ -14,7 +14,7 @@ body {
 	fill: rgb(0, 139, 255);
 }
 
-.chart, text {
+.chart text {
 	fill: #FFF;
 }
 
@@ -48,7 +48,7 @@ body {
 
 
 .block {
-	padding: 10px 0; 
+	padding: 10px 0;
 	display: block;
 }
 
@@ -67,6 +67,3 @@ rect.apples {
 rect.carrots {
 	fill: purple;
 }
-
-
-
